@@ -1,0 +1,44 @@
+[
+  {
+    "year": 1,
+    "tuition": 3000,
+    "hostel": 2000,
+    "misc": 100,
+    "currency": "USD"
+  },
+  {
+    "year": 2,
+    "tuition": 0,
+    "hostel": 0,
+    "misc": 0,
+    "currency": "USD"
+  },
+  {
+    "year": 3,
+    "tuition": 0,
+    "hostel": 0,
+    "misc": 0,
+    "currency": "USD"
+  },
+  {
+    "year": 4,
+    "tuition": 0,
+    "hostel": 0,
+    "misc": 0,
+    "currency": "USD"
+  },
+  {
+    "year": 5,
+    "tuition": 0,
+    "hostel": 0,
+    "misc": 0,
+    "currency": "USD"
+  },
+  {
+    "year": 6,
+    "tuition": 0,
+    "hostel": 0,
+    "misc": 0,
+    "currency": "USD"
+  }
+]

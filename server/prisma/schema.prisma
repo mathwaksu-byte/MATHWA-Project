@@ -1,0 +1,111 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model University {
+  id             String   @id @default(uuid())
+  slug           String   @unique
+  name           String
+  active         Boolean  @default(true)
+  overview       String?
+  accreditation  String[] @default([])
+  hero_image_url String?
+  logo_url       String?
+  gallery_urls   String[] @default([])
+  duration_years Int?
+  intake_months  String[] @default([])
+  eligibility    String?
+  hostel_info    String?
+  created_at     DateTime @default(now())
+  fees           Fee[]
+}
+
+model Fee {
+  id            String     @id @default(uuid())
+  university_id String
+  year          Int
+  tuition       Decimal    @default(0)
+  hostel        Decimal    @default(0)
+  misc          Decimal    @default(0)
+  currency      String     @default("USD")
+  university    University @relation(fields: [university_id], references: [id], onDelete: Cascade)
+
+  @@unique([university_id, year])
+}
+
+model Lead {
+  id                        String    @id @default(uuid())
+  name                      String
+  phone                     String
+  email                     String?
+  city                      String?
+  neet_qualified            Boolean?
+  marksheet_url             String?
+  preferred_university_slug String?
+  preferred_year            Int?
+  source                    String?
+  status                    String    @default("new")
+  utm                       Json?
+  consent                   Boolean   @default(true)
+  created_at                DateTime  @default(now())
+  assigned_admin_id         String?
+  notes                     String    @default("")
+  priority                  String    @default("normal")
+  last_contacted_at         DateTime?
+  next_action_at            DateTime?
+
+  @@index([created_at])
+  @@index([status])
+}
+
+model Admin {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  password_hash String
+  role          String   @default("admin")
+  created_at    DateTime @default(now())
+}
+
+model FAQ {
+  id         String   @id @default(uuid())
+  question   String
+  answer     String
+  active     Boolean  @default(true)
+  created_at DateTime @default(now())
+}
+
+model Testimonial {
+  id         String   @id @default(uuid())
+  name       String
+  quote      String?
+  video_url  String?
+  photo_url  String?
+  active     Boolean  @default(true)
+  created_at DateTime @default(now())
+}
+
+model Article {
+  id         String   @id @default(uuid())
+  title      String
+  slug       String   @unique
+  content    String?
+  active     Boolean  @default(true)
+  created_at DateTime @default(now())
+}
+
+model SiteSetting {
+  key                     String   @id @default("default")
+  hero_title              String?
+  hero_subtitle           String?
+  hero_video_mp4_url      String?
+  hero_video_webm_url     String?
+  hero_video_poster_url   String?
+  background_theme_id     String?
+  background_gradient_css String?
+  updated_at              DateTime @default(now())
+}

@@ -1,0 +1,9 @@
+{
+  "hero_title": "uni",
+  "hero_subtitle": "uni",
+  "hero_video_mp4_url": "http://localhost:4000/uploads/hero/1763010121261_Top_Medical_Universities_in_Kyrgyzstan.mp4",
+  "hero_video_webm_url": "",
+  "hero_video_poster_url": "http://localhost:4000/uploads/hero/1762696654378_posterimage.png",
+  "background_theme_id": "emerald-teal",
+  "background_gradient_css": "radial-gradient(1200px 700px at 8% 0%, rgba(0,128,128,0.44), transparent 65%), radial-gradient(1100px 640px at 92% 100%, rgba(27,59,156,0.35), transparent 70%), radial-gradient(900px 520px at 40% 45%, rgba(41,171,226,0.30), transparent 72%)"
+}

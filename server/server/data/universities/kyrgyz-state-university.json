@@ -1,0 +1,21 @@
+{
+  "slug": "kyrgyz-state-university",
+  "name": "Kyrgyz State University (Arabaev University)",
+  "active": true,
+  "overview": "Kyrgyz State University is a reputed public university in Kyrgyzstan offering MBBS programs. MATHWA is the official admission partner.",
+  "accreditation": [
+    "Government Accredited",
+    "NEET Eligible",
+    "WHO Listed"
+  ],
+  "hero_image_url": "http://localhost:4000/uploads/universities/kyrgyz-state-university/dp/1762931071706_ksu-logo.png",
+  "logo_url": "",
+  "gallery_urls": [],
+  "duration_years": 6,
+  "intake_months": [
+    "September",
+    "February"
+  ],
+  "eligibility": "NEET qualification required; 50% in Physics, Chemistry, Biology (PCB); Age 17+ at admission",
+  "hostel_info": "Hostels with Indian mess facilities available; Separate accommodations for boys and girls."
+}

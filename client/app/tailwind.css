@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global brand styles */
+:root {
+  --brand-blue: #1b3b9c;
+  --brand-golden: #f5b301;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply bg-white text-slate-900;
+  /* Use the brand-logo inspired gradient across the entire page.
+     Allow runtime switching via CSS variable --app-bg. */
+  background-image: var(--app-bg, theme('backgroundImage.brand-gradient'));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.cta-glow {
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.45);
+}
