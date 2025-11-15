@@ -12,7 +12,7 @@ const dataProvider: DataProvider = {
       if (!res.ok) throw new Error('Failed to fetch');
       const json = await res.json();
       const data: RaRecord[] = (json.universities || []).map((u: any) => ({ ...u, id: u.slug || u.id }));
-      return { data, total: data.length };
+      return { data: data as any, total: data.length } as any;
     }
     if (resource === 'leads') {
       const { page, perPage } = (params as any).pagination || { page: 1, perPage: 20 };
@@ -29,7 +29,7 @@ const dataProvider: DataProvider = {
       const json = await res.json();
       const data: RaRecord[] = (json.data || []).map((u: any) => ({ ...u, id: u.id }));
       const total = json.total || data.length;
-      return { data, total };
+      return { data: data as any, total } as any;
     }
     throw new Error('Resource not supported');
   },
@@ -41,7 +41,7 @@ const dataProvider: DataProvider = {
       if (!res.ok) throw new Error('Not found');
       const json = await res.json();
       const u = json.university;
-      return { data: { ...u, id: u.slug || u.id } };
+      return { data: { ...u, id: u.slug || u.id } as any } as any;
     }
     if (resource === 'leads') {
       const id = (params as any).id as string;
@@ -49,7 +49,7 @@ const dataProvider: DataProvider = {
       if (!res.ok) throw new Error('Not found');
       const json = await res.json();
       const u = json.data;
-      return { data: { ...u, id: u.id } };
+      return { data: { ...u, id: u.id } as any } as any;
     }
     throw new Error('Resource not supported');
   },
@@ -61,7 +61,7 @@ const dataProvider: DataProvider = {
       if (!res.ok) throw new Error('Failed to create');
       const json = await res.json();
       const u = json.university;
-      return { data: { ...u, id: u.slug || u.id } };
+      return { data: { ...u, id: u.slug || u.id } as any } as any;
     }
     throw new Error('Not implemented in demo mode');
   },
@@ -72,7 +72,7 @@ const dataProvider: DataProvider = {
       if (!res.ok) throw new Error('Failed to update');
       const json = await res.json();
       const u = json.data;
-      return { data: { ...u, id: u.id } };
+      return { data: { ...u, id: u.id } as any } as any;
     }
     if (resource === 'universities') {
       const id = (params as any).id as string;
@@ -82,7 +82,7 @@ const dataProvider: DataProvider = {
       if (!res.ok) throw new Error('Failed to update');
       const json = await res.json();
       const u = json.university;
-      return { data: { ...u, id: u.slug || u.id } };
+      return { data: { ...u, id: u.slug || u.id } as any } as any;
     }
     throw new Error('Not implemented in demo mode');
   },
@@ -92,7 +92,7 @@ const dataProvider: DataProvider = {
       let res = await fetch(`${apiBase}/api/universities/${id}`, { method: 'DELETE' }).catch(() => null as any);
       if (!res || !res.ok) res = await fetch(`${fallbackBase}/api/universities/${id}`, { method: 'DELETE' });
       if (!res.ok) throw new Error('Failed to delete');
-      return { data: { id } };
+      return { data: ({ id } as any) } as any;
     }
     throw new Error('Not implemented in demo mode');
   },

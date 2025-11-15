@@ -10,12 +10,12 @@ export const UniversityCreate = () => (
       <TextInput source="overview" label="Overview" multiline fullWidth />
       <ArrayInput source="accreditation" label="Accreditations">
         <SimpleFormIterator>
-          <TextInput label="Item" />
+          <TextInput source="" label="Item" />
         </SimpleFormIterator>
       </ArrayInput>
       <ArrayInput source="intake_months" label="Intake Months">
         <SimpleFormIterator>
-          <TextInput label="Month" />
+          <TextInput source="" label="Month" />
         </SimpleFormIterator>
       </ArrayInput>
       <TextInput source="eligibility" label="Eligibility" multiline fullWidth />
@@ -36,12 +36,12 @@ export const UniversityEdit = () => (
       <TextInput source="overview" label="Overview" multiline fullWidth />
       <ArrayInput source="accreditation" label="Accreditations">
         <SimpleFormIterator>
-          <TextInput label="Item" />
+          <TextInput source="" label="Item" />
         </SimpleFormIterator>
       </ArrayInput>
       <ArrayInput source="intake_months" label="Intake Months">
         <SimpleFormIterator>
-          <TextInput label="Month" />
+          <TextInput source="" label="Month" />
         </SimpleFormIterator>
       </ArrayInput>
       <TextInput source="eligibility" label="Eligibility" multiline fullWidth />
@@ -51,4 +51,3 @@ export const UniversityEdit = () => (
     </SimpleForm>
   </Edit>
 );
-
