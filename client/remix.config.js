@@ -1,5 +1,5 @@
 export default {
-  serverBuildTarget: 'cloudflare-pages',
+  serverBuildTarget: 'cloudflare',
   serverModuleFormat: 'esm',
   serverBuildPath: 'build/server/index.js'
 }
