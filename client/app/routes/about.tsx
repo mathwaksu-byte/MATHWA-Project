@@ -26,7 +26,7 @@ export default function About() {
       <h2 className="mt-10 text-2xl font-bold">Our Partner Universities</h2>
       <div className="mt-4 grid sm:grid-cols-2 gap-6">
         <a href="/universities/kyrgyz-state-university" className="block glass rounded-lg overflow-hidden">
-          <img src="https://images.example.com/universities/kyrgyz/logo.png" alt="Kyrgyz State University" className="w-full h-32 object-contain bg-white" />
+          <img src="/uploads/universities/kyrgyz/logo.png" alt="Kyrgyz State University" className="w-full h-32 object-contain bg-white" />
           <div className="p-4">
             <div className="font-semibold">Kyrgyz State University (Arabaev University)</div>
             <p className="text-slate-600 text-sm mt-1">Accredited MBBS course with 6-year program.</p>

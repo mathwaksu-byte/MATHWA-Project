@@ -1,0 +1,14 @@
+name = "mathwa-api-worker"
+main = "src/worker.ts"
+compatibility_date = "2024-11-16"
+
+[vars]
+UPSTREAM_URL = "http://localhost:4000"
+
+[[kv_namespaces]]
+binding = "KV_APP"
+preview_id = "KV_APP"
+
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "mathwa-local"
