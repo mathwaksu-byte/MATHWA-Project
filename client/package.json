@@ -5,7 +5,7 @@
   "sideEffects": false,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "remix build && node -e \"fs=require('fs');fs.mkdirSync('build/client',{recursive:true});fs.copyFileSync('public/_worker.js','build/client/_worker.js')\"",
     "build:cf": "remix build",
     "start": "vite preview --port 5173"
   },
